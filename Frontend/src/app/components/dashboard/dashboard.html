@@ -1,0 +1,34 @@
+<div class="bank-container">
+  <div class="card">
+    <h1>Witaj, <span style="color: #004a99;">Jan Kowalski</span></h1>
+    <p>Numer konta: <strong>PL 12 3456 7890 0000 0000 1234 5678</strong></p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+    <div class="card">
+      <h3>Dostępne środki</h3>
+      <h2 style="font-size: 2.5rem; color: #2ecc71;">12 500.00 PLN</h2>
+    </div>
+
+    <div class="card">
+      <h3>Szybki przelew</h3>
+      <input type="text" placeholder="Odbiorca">
+      <input type="number" placeholder="Kwota">
+      <button>Wyślij pieniądze</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Ostatnie transakcje</h3>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr style="border-bottom: 1px solid #eee;">
+        <td style="padding: 10px;">Opłata za serwer</td>
+        <td style="text-align: right; color: red;">-45.00 PLN</td>
+      </tr>
+      <tr>
+        <td style="padding: 10px;">Przelew przychodzący</td>
+        <td style="text-align: right; color: green;">+3000.00 PLN</td>
+      </tr>
+    </table>
+  </div>
+</div>

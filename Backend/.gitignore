@@ -1,0 +1,69 @@
+# ==========================================
+# ANGULAR / NODE / FRONTEND
+# ==========================================
+node_modules/
+dist/
+.angular/
+tmp/
+/src/assets/env.js
+/src/assets/env.template.js
+
+# Logi npm i yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Konfiguracja edytorów frontendowych
+.editorconfig
+.prettierrc
+
+# ==========================================
+# JAVA / SPRING / MAVEN / GRADLE
+# ==========================================
+# Skompilowane pliki
+*.class
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Foldery budowania (Maven/Gradle)
+target/
+build/
+out/
+.gradle/
+bin/
+
+# Logi Spring Boot
+*.log
+logs/
+
+# ==========================================
+# NARZĘDZIA / IDE (IntelliJ, VS Code, Eclipse)
+# ==========================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Eclipse
+.settings/
+.project
+.classpath
+.factorypath
+
+# ==========================================
+# SYSTEMOWE
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
