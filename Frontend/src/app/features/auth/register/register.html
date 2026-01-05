@@ -1,0 +1,25 @@
+<div style="max-width: 500px; margin: 50px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #f0f0f0;">
+  <h2 style="color: #004a99; margin-bottom: 5px;">Otwórz konto w MatBank</h2>
+  <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Wypełnij poniższe dane, aby dołączyć do nas.</p>
+
+  <form #regForm="ngForm">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+      <input type="text" name="fn" [(ngModel)]="regData.firstName" placeholder="Imię" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+      <input type="text" name="ln" [(ngModel)]="regData.lastName" placeholder="Nazwisko" style="padding: 12px; border: 1px solid #ddd; border-radius: 8px;">
+    </div>
+
+    <input type="text" name="pesel" [(ngModel)]="regData.pesel" placeholder="PESEL" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-top: 15px; box-sizing: border-box;">
+    
+    <input type="text" name="phone" [(ngModel)]="regData.phone" placeholder="Numer telefonu" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-top: 15px; box-sizing: border-box;">
+    
+    <input type="email" name="email" [(ngModel)]="regData.email" placeholder="Adres e-mail" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-top: 15px; box-sizing: border-box;">
+    
+    <input type="text" name="addr" [(ngModel)]="regData.address" placeholder="Adres zamieszkania" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-top: 15px; box-sizing: border-box;">
+    
+    <input type="password" name="pwd" [(ngModel)]="regData.password" placeholder="Hasło do bankowości" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; margin-top: 15px; box-sizing: border-box;">
+
+    <button (click)="onRegister()" style="width: 100%; background: #004a99; color: white; border: none; padding: 15px; border-radius: 30px; margin-top: 25px; font-weight: bold; cursor: pointer; font-size: 1rem;">
+      Zarejestruj się
+    </button>
+  </form>
+</div>

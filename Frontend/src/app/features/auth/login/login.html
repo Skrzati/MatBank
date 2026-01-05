@@ -1,0 +1,25 @@
+<div style="max-width: 400px; margin: 60px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid #f0f0f0; text-align: center;">
+  
+  <h2 style="color: #004a99; margin-bottom: 10px;">Witaj ponownie</h2>
+  <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Zaloguj się do bankowości internetowej</p>
+
+  <form (submit)="onLogin()">
+    <div style="text-align: left; margin-bottom: 15px;">
+      <label style="font-size: 0.8rem; font-weight: bold; color: #555; display: block; margin-bottom: 5px;">Numer Klienta</label>
+      <input type="text" [(ngModel)]="loginData.clientId" name="clientId" placeholder="Wpisz numer" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+    </div>
+
+    <div style="text-align: left; margin-bottom: 25px;">
+      <label style="font-size: 0.8rem; font-weight: bold; color: #555; display: block; margin-bottom: 5px;">Hasło</label>
+      <input type="password" [(ngModel)]="loginData.password" name="password" placeholder="••••••••" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
+    </div>
+
+    <button type="submit" style="width: 100%; background: #004a99; color: white; border: none; padding: 14px; border-radius: 30px; font-weight: bold; cursor: pointer; font-size: 1rem; transition: background 0.3s;">
+      Zaloguj się
+    </button>
+  </form>
+
+  <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">
+    Nie masz konta? <a routerLink="/register" style="color: #004a99; font-weight: bold; text-decoration: none; cursor: pointer;">Otwórz je tutaj</a>
+  </p>
+</div>

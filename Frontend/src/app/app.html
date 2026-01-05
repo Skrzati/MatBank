@@ -1,78 +1,30 @@
-<nav style="background: #004a99; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
-  <strong style="font-size: 1.6rem; letter-spacing: 1px;">🏦 MatBank</strong>
-  <button (click)="runDebug()" style="background: #e67e22; border: none; padding: 10px 20px; border-radius: 5px; color: white; cursor: pointer; font-weight: bold; transition: 0.3s;">
-    ⚙️ DEBUG: OMIŃ LOGOWANIE
-  </button>
+<nav style="background: white; padding: 15px 10%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+  <div style="display: flex; align-items: center; gap: 40px;">
+    <strong routerLink="/" style="font-size: 1.8rem; color: #004a99; font-weight: 800; cursor: pointer;">MatBank</strong>
+    <div style="display: flex; gap: 20px; color: #555; font-size: 0.9rem; font-weight: 500;">
+      <span style="cursor: pointer;">Oszczędności</span>
+      <span style="cursor: pointer;">Kredyty</span>
+    </div>
+  </div>
+
+  <div style="display: flex; gap: 15px; align-items: center;">
+    <button (click)="runDebug()" style="background: #fff5eb; border: 1px solid #e67e22; color: #e67e22; padding: 8px 15px; border-radius: 20px; cursor: pointer; font-size: 0.75rem; font-weight: bold;">
+      ⚙️ DEBUG DASHBOARD
+    </button>
+    
+    <button routerLink="/login" style="background: transparent; border: 1px solid #004a99; color: #004a99; padding: 8px 25px; border-radius: 20px; cursor: pointer; font-weight: bold;">
+      Logowanie
+    </button>
+    <button routerLink="/register" style="background: #004a99; border: none; color: white; padding: 9px 25px; border-radius: 20px; cursor: pointer; font-weight: bold;">
+      Otwórz konto
+    </button>
+  </div>
 </nav>
 
-<div class="container" style="max-width: 1100px; margin: 40px auto; font-family: 'Segoe UI', sans-serif; padding: 0 20px;">
-  
-  @if (!isLoggedIn) {
-    <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 40px;">
-      
-      <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #eef;">
-        <h3 style="color: #004a99; margin-bottom: 5px;">Logowanie</h3>
-        <p style="font-size: 0.85rem; color: #888; margin-bottom: 20px;">Wprowadź dane dostępowe</p>
-        
-        <label style="font-size: 0.8rem; font-weight: bold; color: #555;">Numer Klienta</label>
-        <input type="text" placeholder="Np. 12345678" [(ngModel)]="loginData.clientId" style="width: 100%; padding: 12px; margin: 5px 0 15px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-        
-        <label style="font-size: 0.8rem; font-weight: bold; color: #555;">Hasło</label>
-        <input type="password" placeholder="••••••••" [(ngModel)]="loginData.password" style="width: 100%; padding: 12px; margin: 5px 0 20px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;">
-        
-        <button (click)="onLogin()" style="width: 100%; padding: 14px; background: #004a99; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem;">
-          Zaloguj bezpiecznie
-        </button>
-      </div>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-      <div style="background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #eef;">
-        <h3 style="color: #004a99; margin-bottom: 5px;">Otwórz konto osobiste</h3>
-        <p style="font-size: 0.85rem; color: #888; margin-bottom: 20px;">Wypełnij wniosek, aby dołączyć do MatBank</p>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-          <div>
-            <label style="font-size: 0.8rem; font-weight: bold;">Imię</label>
-            <input type="text" [(ngModel)]="regData.firstName" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
-          </div>
-          <div>
-            <label style="font-size: 0.8rem; font-weight: bold;">Nazwisko</label>
-            <input type="text" [(ngModel)]="regData.lastName" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
-          </div>
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px;">
-          <div>
-            <label style="font-size: 0.8rem; font-weight: bold;">PESEL</label>
-            <input type="text" [(ngModel)]="regData.pesel" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
-          </div>
-          <div>
-            <label style="font-size: 0.8rem; font-weight: bold;">Telefon</label>
-            <input type="text" [(ngModel)]="regData.phone" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
-          </div>
-        </div>
-
-        <label style="font-size: 0.8rem; font-weight: bold;">E-mail</label>
-        <input type="email" [(ngModel)]="regData.email" style="width: 100%; padding: 10px; margin: 5px 0 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
-
-        <label style="font-size: 0.8rem; font-weight: bold;">Adres zamieszkania</label>
-        <input type="text" [(ngModel)]="regData.address" style="width: 100%; padding: 10px; margin: 5px 0 15px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
-
-        <label style="font-size: 0.8rem; font-weight: bold;">Hasło do konta</label>
-        <input type="password" [(ngModel)]="regData.password" placeholder="Ustal silne hasło" style="width: 100%; padding: 10px; margin: 5px 0 20px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
-        
-        <button (click)="onRegister()" style="width: 100%; padding: 14px; background: #27ae60; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1rem;">
-          Zostań klientem MatBank
-        </button>
-      </div>
-
-    </div>
-  } @else {
-    <app-dashboard></app-dashboard>
-    <div style="text-align: center; margin-top: 30px;">
-        <button (click)="isLoggedIn = false" style="padding: 10px 25px; background: #fdfdfd; color: #c0392b; border: 1px solid #c0392b; border-radius: 6px; cursor: pointer; font-weight: bold;">
-          Wyloguj się
-        </button>
-    </div>
-  }
-
-</div>
+<footer style="margin-top: 50px; padding: 30px 10%; background: #f9f9f9; color: #888; font-size: 0.8rem; text-align: center; border-top: 1px solid #eee;">
+  &copy; 2026 MatBank S.A. Bezpieczeństwo | Kontakt | Dokumenty
+</footer>
