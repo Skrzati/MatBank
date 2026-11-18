@@ -1,0 +1,1 @@
+This is my first major project, focused on a core banking system. To maximize my learning and truly master the fundamentals, I am building it completely from scratch without using any AI code generation.
